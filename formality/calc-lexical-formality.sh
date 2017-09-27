@@ -2,7 +2,7 @@ cd $root_dir
 lexical_scores=$exp_dir/lexical-scores
 if [[ $learning_method == SVM ]]; then
 	svm_model=$exp_dir/model
-	if [ ! -f $svm_model- ]; then
+	if [ ! -f $svm_model ]; then
 		echo " * Training SVM for $vsm_corpus ..."
 		python -m model.train-svm \
 			-t $vsm_type      \
@@ -14,7 +14,7 @@ if [[ $learning_method == SVM ]]; then
 			-s $svm_model
 	fi;
 
-	if [ ! -f $lexical_scores- ]; then
+	if [ ! -f $lexical_scores ]; then
 		echo " * Calculating lexical scores ..."
 		python -m model.score-svm \
 			-t $vsm_type \
@@ -27,7 +27,7 @@ if [[ $learning_method == SVM ]]; then
 	fi;
 elif [[ $learning_method == PCA ]]; then
 	pca_model=$exp_dir/model
-	if [ ! -f $pca_model.npy- ]; then
+	if [ ! -f $pca_model.npy ]; then
 		echo " * Training PCA for $vsm_corpus ..."
 		python -m model.train-pca \
 			-k 1             \
@@ -40,7 +40,7 @@ elif [[ $learning_method == PCA ]]; then
 			-c $pca_model
 	fi;
 
-	if [ ! -f $lexical_scores- ]; then
+	if [ ! -f $lexical_scores ]; then
 		echo " * Calculating lexical scores ..."
 		python -m model.score-vec-sim \
 			-t $vsm_type     \
@@ -53,7 +53,7 @@ elif [[ $learning_method == PCA ]]; then
 			> $lexical_scores
 	fi;
 elif [[ $learning_method == SimDiff ]]; then
-	if [ ! -f $lexical_scores- ]; then
+	if [ ! -f $lexical_scores ]; then
 		echo " * Calculating lexical scores ..."
 		python -m model.score-sim-diff \
 			-t $vsm_type     \

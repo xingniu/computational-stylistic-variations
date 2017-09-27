@@ -29,30 +29,31 @@ Optional arguments:
   -s               sort lines by formality score
 ```
 
-## Results
-| Method | VSM | Dimension | PCA-Data | Sub-Dim | CTRW Accuracy | BEAN Spearman's r |
-|--------|:---:|----------:|:--------:|--------:|:-------------:|:-----------------:|
-| SVM | W2V | 10 | | | 0.776 | 0.566 |
-| PCA | W2V | 10 | | | 0.770 | 0.656 |
-| SimDiff | W2V | 10 | | | 0.780 | 0.646 |
-| SVM | W2V | 300 | ppdb | 20 | **0.844** | **0.662** |
-| PCA | W2V | 300 | ppdb | 20 | 0.829 | **0.660** |
-| SimDiff | W2V | 300 | ppdb | 20 | 0.832 | **0.662** |
-| SVM | W2V | 300 | seed | 20 | 0.801 | 0.576 |
-| PCA | W2V | 300 | seed | 20 | 0.768 | 0.653 |
-| SimDiff | W2V | 300 | seed | 20 | 0.781 | 0.658 |
-| SVM | LSA | 10 | | | 0.737 | **0.661** |
-| PCA | LSA | 10 | | | 0.730 | 0.655 |
-| SimDiff | LSA | 10 | | | 0.780 | 0.646 |
-| SVM | LSA | 300 | ppdb | 20 | 0.712 | 0.457 |
-| PCA | LSA | 300 | ppdb | 20 | 0.671 | 0.498 |
-| SimDiff | LSA | 300 | ppdb | 20 | 0.686 | 0.492 |
-| SVM | LSA | 300 | seed | 20 | 0.727 | 0.481 |
-| PCA | LSA | 300 | seed | 20 | 0.699 | 0.522 |
-| SimDiff | LSA | 300 | seed | 20 | 0.714 | 0.524 |
+## Evaluation
+| Method | VSM | Dimension | PCA-Data | Sub-Dim | CTRW Accuracy | BEAN Spearman's r | BEAN RMSE |
+|--------|:---:|----------:|:--------:|--------:|:-------------:|:-----------------:|:---------:|
+| SVM | W2V | 10 | | | 0.776 | 0.566 | 0.424 |
+| PCA | W2V | 10 | | | 0.770 | 0.656 | 0.390 |
+| SimDiff | W2V | 10 | | | 0.780 | 0.646 | 0.404 |
+| SVM | W2V | 300 | ppdb | 20 | **0.844** | **0.662** | 0.372 |
+| PCA | W2V | 300 | ppdb | 20 | 0.829 | **0.660** | 0.389 |
+| SimDiff | W2V | 300 | ppdb | 20 | 0.832 | **0.662** | 0.386 |
+| SVM | W2V | 300 | seed | 20 | 0.801 | 0.576 | 0.384 |
+| PCA | W2V | 300 | seed | 20 | 0.768 | 0.653 | 0.377 |
+| SimDiff | W2V | 300 | seed | 20 | 0.781 | 0.658 | 0.364 |
+| SVM | LSA | 10 | | | 0.737 | **0.661** | 0.361 |
+| PCA | LSA | 10 | | | 0.730 | 0.655 | **0.352** |
+| SimDiff | LSA | 10 | | | 0.780 | 0.646 | **0.353** |
+| SVM | LSA | 300 | ppdb | 20 | 0.712 | 0.457 | 0.641 |
+| PCA | LSA | 300 | ppdb | 20 | 0.671 | 0.498 | 0.545 |
+| SimDiff | LSA | 300 | ppdb | 20 | 0.686 | 0.492 | 0.563 |
+| SVM | LSA | 300 | seed | 20 | 0.727 | 0.481 | 0.575 |
+| PCA | LSA | 300 | seed | 20 | 0.699 | 0.522 | 0.513 |
+| SimDiff | LSA | 300 | seed | 20 | 0.714 | 0.524 | 0.526 |
 
 - VSM: Vector Space Model
 - W2V: word2vec
 - LSA: Latent Semantic Analysis
-- CTRW Accuracy: Choose the Right Word, see paper 2
-- BEAN Spearman's r: blog, email, answers and news, see paper 1
+- CTRW: Choose the Right Word, see paper 2
+- BEAN: Blog, Email, Answers and News, see paper 1
+- RMSE: Root-Mean-Square Error
