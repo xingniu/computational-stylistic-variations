@@ -2,8 +2,30 @@
 Stylistic Variations in Distributional Vector Space Models
 
 This repository contains implementations for
-1. Xing Niu, Marianna Martindale, and Marine Carpuat. "A Study of Style in Machine Translation: Controlling the Formality of Machine Translation Output". EMNLP 2017.
-2. Xing Niu and Marine Carpuat. "Discovering Stylistic Variations in Distributional Vector Space Models via Lexical Paraphrases". Workshop on Stylistic Variation at EMNLP 2017.
+1. Xing Niu and Marine Carpuat. "[Discovering Stylistic Variations in Distributional Vector Space Models via Lexical Paraphrases](http://xingniu.org/pub/styvar_emnlp17.pdf)". Workshop on Stylistic Variation at EMNLP 2017.
+```
+@InProceedings{niu-carpuat:2017:StyVa,
+  author    = {Niu, Xing  and  Carpuat, Marine},
+  title     = {Discovering Stylistic Variations in Distributional Vector Space Models via Lexical Paraphrases},
+  booktitle = {Proceedings of the Workshop on Stylistic Variation},
+  year      = {2017},
+  address   = {Copenhagen, Denmark},
+  publisher = {Association for Computational Linguistics},
+  pages     = {20--27}
+}
+```
+2. Xing Niu, Marianna Martindale, and Marine Carpuat. "[A Study of Style in Machine Translation: Controlling the Formality of Machine Translation Output](http://xingniu.org/pub/formalitymt_emnlp17.pdf)". EMNLP 2017.
+```
+@InProceedings{niu-martindale-carpuat:2017:EMNLP2017,
+  author    = {Niu, Xing  and  Martindale, Marianna  and  Carpuat, Marine},
+  title     = {A Study of Style in Machine Translation: Controlling the Formality of Machine Translation Output},
+  booktitle = {Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2017},
+  address   = {Copenhagen, Denmark},
+  publisher = {Association for Computational Linguistics},
+  pages     = {2804--2809}
+}
+```
 
 ## Dependencies
 - Python 2.7
@@ -13,6 +35,9 @@ This repository contains implementations for
 
 ## Usage Instructions
 1. Set up parameters and pointers in [global.cfg](global.cfg).
+> - Get a hint of parameter settings from the *Evaluation* section below.
+> - Choose Word2vec based models (e.g. SVM-W2V-subspace) for ranking purpose.
+> - Choose LSA based models (e.g. PCA-LSA) for scoring purpose.
 2. Initialize and test.
 ```bash
 > bash formality/evaluate.sh
@@ -54,6 +79,6 @@ Optional arguments:
 - VSM: Vector Space Model
 - W2V: word2vec
 - LSA: Latent Semantic Analysis
-- CTRW: Choose the Right Word, see paper 2
-- BEAN: Blog, Email, Answers and News, see paper 1
+- CTRW: Choose the Right Word, see paper 1
+- BEAN: Blog, Email, Answers and News, see paper 2
 - RMSE: Root-Mean-Square Error
