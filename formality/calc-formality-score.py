@@ -1,6 +1,7 @@
 #!/usr/bin/env python -*- coding: utf-8 -*-
 
 import argparse
+import codecs
 from model import utils
 
 if __name__ == "__main__":
@@ -17,7 +18,7 @@ if __name__ == "__main__":
     
     scores_ref_valid = []
     scores_cal_valid = []
-    for line in open(args.input,"rb"):
+    for line in codecs.open(args.input,'rb','utf8'):
         tokens = line.split()
         if args.dedup:
             tokens = list(set(tokens))
@@ -27,4 +28,4 @@ if __name__ == "__main__":
             v, oov, score = utils.average_score(tokens, lexical_scores)
         if score == None:
             score = float('NaN')
-        print "%.6f\t%s" % (score, line.strip())
+        print "%.6f\t%s" % (score, line.encode('utf8').strip())
