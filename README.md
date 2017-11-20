@@ -44,14 +44,16 @@ This repository contains implementations for
 ```
 3. Calculate lexical formality for lines of text.
 ```bash
-> bash formality/calc-formality-score.sh -i input-file -o output-file -s
+> bash formality/calc-formality-score.sh -i input-file -o output-file -p -s
 ```
 ```
-Usage: calc-formality-score.sh -i INPUT_FILE -o OUTPUT_FILE [-s]
+Usage: calc-formality-score.sh -i INPUT_FILE -o OUTPUT_FILE [-s] [-l] [-p]
 Optional arguments:
   -i INPUT_FILE    input file (absolute path)
   -o OUTPUT_FILE   output file (absolute path)
   -s               sort lines by formality score
+  -l               only output lexical scores"
+  -p               preprocess input file (tokenization and lowercasing)"
 ```
 
 ## Evaluation
