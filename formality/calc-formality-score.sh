@@ -37,8 +37,8 @@ script_dir=`dirname $0`
 ## Experiment naming variables
 exp_data_dir=$exp_root_dir/data
 mkdir -p $exp_data_dir
-exp_dir=$exp_root_dir/temp
-mkdir -p $exp_dir
+exp_dir=$(mktemp -d)
+echo "temporary files are stored in $exp_dir"
 
 ## Prepare style-annotated words
 . $root_dir/data-prep/prep-annotated-words.sh
