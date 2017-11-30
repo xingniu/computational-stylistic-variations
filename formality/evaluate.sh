@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Fromality evaluation started at $(date)"
+echo "Formality evaluation started at $(date)"
 
 script_dir=`dirname $0`
 . $script_dir/../global.cfg
@@ -53,4 +53,4 @@ if [ ! -f $result ]; then
 	cat $result
 fi;
 
-echo "Fromality evaluation finished at $(date)"
+echo "Formality evaluation finished at $(date)"

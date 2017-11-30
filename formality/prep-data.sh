@@ -39,5 +39,17 @@ if [ ! -f $sentence_words ]; then
 		> $sentence_words
 fi;
 
-## Preprocess "ICWSM 2009 Spinn3r Blog Dataset"
-. $root_dir/data-prep/prep-spinn3r.sh
+if [[ $mono_corpus == spinn3r ]]; then
+	## Preprocess "ICWSM 2009 Spinn3r Blog Dataset"
+	. $root_dir/data-prep/prep-spinn3r.sh
+elif [[ $mono_corpus == user ]]; then
+	## Preprocess/link user-provided corpus
+	vsm_corpus=$exp_data_dir/$(echo `basename $user_corpus` | cut -d. -f1)
+	if [[ $user_corpus_prep == yes ]]; then
+		input_file=$user_corpus
+		prep_file=$vsm_corpus.lc.en
+		. $root_dir/data-prep/prep-user-corpus.sh
+	else
+		ln -sf $user_corpus $vsm_corpus.lc.en
+	fi;
+fi;

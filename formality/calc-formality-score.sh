@@ -29,7 +29,7 @@ while getopts ":i:o:slph" opt; do
 	esac
 done
 
-echo "Calculating fromality scores started at $(date)"
+echo "Calculating formality scores started at $(date)"
 
 script_dir=`dirname $0`
 . $script_dir/../global.cfg
@@ -91,4 +91,4 @@ else
 fi;
 
 rm -r $exp_dir
-echo "Calculating fromality scores finished at $(date)"
+echo "Calculating formality scores finished at $(date)"
