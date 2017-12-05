@@ -39,10 +39,10 @@ if [ ! -f $sentence_words ]; then
 		> $sentence_words
 fi;
 
-if [[ $mono_corpus == spinn3r ]]; then
+if [[ $mono_corpus == spinn3r ]] && [[ $use_user_vsm != True ]]; then
 	## Preprocess "ICWSM 2009 Spinn3r Blog Dataset"
 	. $root_dir/data-prep/prep-spinn3r.sh
-elif [[ $mono_corpus == user ]]; then
+elif [[ $mono_corpus == user ]] && [[ $use_user_vsm != True ]]; then
 	## Preprocess/link user-provided corpus
 	vsm_corpus=$exp_data_dir/$(echo `basename $user_corpus` | cut -d. -f1)
 	if [[ $user_corpus_prep == yes ]]; then

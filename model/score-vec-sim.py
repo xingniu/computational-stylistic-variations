@@ -17,7 +17,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     vsm = utils.VSM(args.type, args.model, args.incomponents)
-    u = load(args.coefficient)
+    u = load(args.coefficient)[0]
     
     if args.similarity == "cosine":
         utils.print_lexical_scores(args.vocabulary, args.debiasing, args.neutral, vsm, \
